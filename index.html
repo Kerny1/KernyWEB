@@ -3,104 +3,315 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kerny Professional | Professional Resume</title>
-  <meta name="description" content="Professional resume website for Kerny Professional, a fictional student candidate seeking employment." />
-
+  <title>Kerny Professional | Resume</title>
   <style>
-    /* Tus estilos originales completos (no los cambié) */
-    /* ... */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6f8;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0f172a, #1e3a5f);
+      color: white;
+      padding: 50px 60px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #dbe4ee;
+      max-width: 750px;
+    }
+
+    .top-info {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      font-size: 15px;
+      color: #e5edf5;
+    }
+
+    .top-info a {
+      color: #e5edf5;
+      text-decoration: none;
+    }
+
+    .main {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 0;
+    }
+
+    .left, .right {
+      padding: 40px 35px;
+    }
+
+    .left {
+      border-right: 1px solid #e5e7eb;
+    }
+
+    .section {
+      margin-bottom: 34px;
+    }
+
+    .section h2 {
+      font-size: 22px;
+      margin-bottom: 14px;
+      color: #0f172a;
+      border-bottom: 2px solid #dbe4ee;
+      padding-bottom: 8px;
+    }
+
+    .item {
+      margin-bottom: 22px;
+    }
+
+    .item h3 {
+      font-size: 18px;
+      color: #111827;
+      margin-bottom: 4px;
+    }
+
+    .item .meta {
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .sidebar-box {
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar-box h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: #0f172a;
+    }
+
+    .skills-list span {
+      display: inline-block;
+      background: #e8eef5;
+      color: #1e3a5f;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin: 6px 6px 0 0;
+    }
+
+    .buttons {
+      margin-top: 25px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #1e3a5f;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #152b45;
+    }
+
+    .btn-secondary {
+      border: 1px solid #1e3a5f;
+      color: #1e3a5f;
+      background: white;
+    }
+
+    .btn-secondary:hover {
+      background: #f2f6fa;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 22px;
+      font-size: 14px;
+      color: #6b7280;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    @media (max-width: 900px) {
+      .main {
+        grid-template-columns: 1fr;
+      }
+
+      .left {
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .hero {
+        padding: 35px 25px;
+      }
+
+      .left, .right {
+        padding: 28px 22px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+    }
   </style>
 </head>
-
 <body>
-  <nav class="nav">
-    <div class="container nav-inner">
-      #topKerny Professional</a>
-      <div class="nav-links">
-        #profileProfile</a>
-        <axperienceExperience</a>
-        #educationEducation</a>
-        <a href="#cover-letter">Cover Letter</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
-
-  <header class="hero" id="top">
-    <div class="container hero-grid" id="profile">
-      <aside class="profile-card">
-        <img src="pic1.png" alt="Kerny Professional" />
-      </aside>
-
-      <div>
-        <div class="eyebrow">Professional Resume</div>
-        <h1>Kerny Professional</h1>
-
-        <p>
-          Hospitality Management senior at Chico State with a 4.0 GPA and experience as an Executive Programmer at BestUniverty Inc. 
-          Passionate about community work, including housing projects, tree‑planting initiatives, and puppy rescue programs.
-          Learning‑oriented, adaptable, and highly motivated to contribute to a Business Administration role.
-        </p>
-
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#contact">Contact</a>
-          <a class="btn btn-secondary" href="#cover-letter">Cover Letter</a>
-        </div>
-
-        <div class="mini-stats">
-          <div class="stat">
-            <strong>Location</strong>
-            <span>Chico, CA</span>
-          </div>
-
-          <div class="stat">
-            <strong>Phone</strong>
-            <span>(213) 555‑0147</span>
-          </div>
-
-          <div class="stat">
-            <strong>LinkedIn</strong>
-            <span>
-              <a href="https://www.linkedin.com/in/kernyprofessional/" target="_blank">
-                kernyprofessional
-              </a>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <section id="experience">
-    <div class="container">
-      <h2 class="section-title">Professional Summary</h2>
-      <p class="section-subtitle">
-        Kerny Professional is a fictional senior student at Chico State with strong academic performance, 
-        technical experience, and community service background.
+  <div class="page">
+    <section class="hero">
+      <h1>Kerny Professional</h1>
+      <p>
+        Hospitality Management student with a 4.0 GPA and strong experience in executive programming,
+        administrative support, team coordination, and customer-focused operations.
       </p>
 
-      <div class="grid-2">
-        <div class="card">
-          <h3>Core Qualifications</h3>
-          <ul class="clean">
-            <li>Strong written and verbal communication</li>
-            <li>Executive-level administrative organization</li>
-            <li>C++ experience applied to workflow automation</li>
-            <li>Team leadership and community engagement</li>
-          </ul>
+      <div class="top-info">
+        <span>Chico, CA</span>
+        <span>(555) 123-4567</span>
+        <a href="mailto:kprofessional@email.com">kprofessional@email.com</a>
+        <a href="https://linkedin.com/in/kernyprofessional" target="_blank">
+          linkedin.com/in/kernyprofessional
+        </a>
+      </div>
+
+      <div class="buttons">
+        <a class="btn btn-primary" href="mailto:kprofessional@email.com">Contact</a>
+        <a class="btn btn-secondary" href="https://linkedin.com/in/kernyprofessional" target="_blank">LinkedIn</a>
+      </div>
+    </section>
+
+    <section class="main">
+      <div class="left">
+        <div class="section">
+          <h2>Professional Summary</h2>
+          <p>
+            Motivated Hospitality Management student with a 4.0 GPA and extensive experience as an
+            Executive Programmer at BestUniverty Inc. Strong background in administration, leadership,
+            and customer service. Highly learning-oriented and effective in team environments. Seeking
+            an opportunity in Business Administration to apply operational experience and problem-solving
+            ability in a dynamic professional setting.
+          </p>
         </div>
 
-        <div class="card">
-          <h3>Skills</h3>
-          <ul class="clean">
-            <li>C++</li>
-            <li>Microsoft Word, Excel, PowerPoint</li>
-            <li>Project scheduling & operations support</li>
-            <li>Learning‑oriented mindset</li>
-          </ul>
+        <div class="section">
+          <h2>Professional Experience</h2>
+          <div class="item">
+            <h3>BestUniverty Inc — Programador Ejecutivo</h3>
+            <div class="meta">January 2020 – Present | Chico, CA</div>
+            <ul>
+              <li>Coordinated internal operations and supported administrative processes to improve team efficiency.</li>
+              <li>Developed basic C++ solutions to automate reports and simplify data-processing tasks.</li>
+              <li>Led communication and staff-support projects that increased department productivity.</li>
+              <li>Assisted with executive calendar management, presentation preparation, and corporate meeting organization.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Community Involvement</h2>
+          <div class="item">
+            <h3>Water Drop — Young Student Community Program</h3>
+            <div class="meta">Chico, CA | 2023 – 2025</div>
+            <ul>
+              <li>Participated in building homes for low-income families.</li>
+              <li>Organized tree-planting activities in environmentally at-risk areas.</li>
+              <li>Joined community animal welfare campaigns and helped rescue multiple puppies.</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Continúa aquí tu contenido original… -->
+      <aside class="right">
+        <div class="sidebar-box">
+          <h3>Education</h3>
+          <p><strong>California State University, Chico</strong></p>
+          <p>Bachelor of Science in Hospitality Management</p>
+          <p>Senior — GPA: 4.0</p>
+          <p>Expected Graduation: May 2026</p>
+          <p><strong>Certificate:</strong> Best Student Award (2025)</p>
+        </div>
+
+        <div class="sidebar-box">
+          <h3>Technical Skills</h3>
+          <div class="skills-list">
+            <span>C++</span>
+            <span>Microsoft Word</span>
+            <span>Microsoft Excel</span>
+            <span>PowerPoint</span>
+            <span>Project Coordination</span>
+            <span>Basic Data Analysis</span>
+          </div>
+        </div>
+
+        <div class="sidebar-box">
+          <h3>Soft Skills</h3>
+          <div class="skills-list">
+            <span>Fast Learner</span>
+            <span>Effective Communication</span>
+            <span>Team Leadership</span>
+            <span>Problem Solving</span>
+            <span>Organization</span>
+            <span>Time Management</span>
+          </div>
+        </div>
+
+        <div class="sidebar-box">
+          <h3>Additional Strengths</h3>
+          <ul>
+            <li>Excellent interpersonal skills</li>
+            <li>Strong work ethic</li>
+            <li>High adaptability</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <div class="footer">
+      © 2026 Kerny Professional — Resume Profile
+    </div>
+  </div>
+</body>
+</html>
