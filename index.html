@@ -1,1 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kerny Alvarez | Resume Strategist</title>
+  <meta name="description" content="Professional resume portfolio website for Kerny Alvarez, a fictional resume strategist and career branding specialist." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --soft: #1f2937;
+      --card: rgba(255,255,255,0.06);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --accent: #38bdf8;
+      --accent-2: #22c55e;
+      --border: rgba(255,255,255,0.12);
+      --shadow: 0 20px 40px rgba(0,0,0,0.35);
+      --max: 1100px;
+    }
 
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #020617 0%, #0f172a 45%, #111827 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(2,6,23,0.75);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 18px;
+    }
+
+    .brand {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+
+    .brand span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 78px 0 40px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      background: rgba(56,189,248,0.12);
+      border: 1px solid rgba(56,189,248,0.25);
+      color: #bae6fd;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.8rem);
+      line-height: 1.03;
+      margin: 0 0 14px;
+      letter-spacing: -1.6px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.07rem;
+      max-width: 680px;
+      margin: 0 0 24px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 18px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #062033;
+    }
+
+    .btn-primary:hover { transform: translateY(-2px); }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.05);
+      transform: translateY(-2px);
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .profile-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .avatar {
+      width: 92px;
+      height: 92px;
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #082032;
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .profile-card h2 {
+      margin: 0 0 8px;
+      font-size: 1.8rem;
+    }
+
+    .profile-card .role {
+      color: #93c5fd;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .chip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    section {
+      padding: 34px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin: 0 0 8px;
+      letter-spacing: -0.6px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      margin: 0 0 24px;
+      max-width: 760px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.18rem;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+    }
+
+    ul.clean {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .resume-panel {
+      display: grid;
+      grid-template-columns: 0.9fr 1.4fr;
+      gap: 22px;
+    }
+
+    .resume-left,
+    .resume-right {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    .resume-name {
+      font-size: 2rem;
+      margin: 0 0 4px;
+    }
+
+    .resume-role {
+      color: #7dd3fc;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .small-heading {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #93c5fd;
+      margin: 22px 0 10px;
+    }
+
+    .timeline-item {
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .timeline-item:last-child { border-bottom: none; }
+
+    .timeline-item h4 {
+      margin: 0 0 4px;
+      font-size: 1.05rem;
+    }
+
+    .timeline-meta {
+      color: #93c5fd;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .price-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .price-card.featured {
+      border-color: rgba(56,189,248,0.4);
+      transform: translateY(-6px);
+    }
+
+    .badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(34,197,94,0.16);
+      color: #bbf7d0;
+      border: 1px solid rgba(34,197,94,0.25);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 900;
+      margin: 6px 0 12px;
+    }
+
+    .testimonial {
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      color: var(--muted);
+    }
+
+    .footer {
+      padding: 28px 0 44px;
+      color: #94a3b8;
+      text-align: center;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .grid-2,
+      .resume-panel,
+      .pricing,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .mini-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .price-card.featured {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">Kerny<span>.</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#resume">Resume</a>
+        <a href="#services">Services</a>
+        <a href="#results">Results</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Resume Strategist • Career Branding Specialist</div>
+        <h1>The resume expert students trust to get interviews.</h1>
+        <p>
+          Kerny Alvarez is a fictional but highly polished resume consultant built to showcase the kind of premium,
+          modern, and results-driven career brand that gets attention. This website is designed to make Kerny look
+          instantly hireable, credible, and professional.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#resume">View Resume</a>
+          <a class="btn btn-secondary" href="#services">See Services</a>
+        </div>
+        <div class="mini-stats">
+          <div class="stat">
+            <strong>150+</strong>
+            <span>Resumes built for students and entry-level professionals</span>
+          </div>
+          <div class="stat">
+            <strong>40%</strong>
+            <span>Estimated increase in interview callback rates</span>
+          </div>
+          <div class="stat">
+            <strong>1-on-1</strong>
+            <span>Personal brand consulting and resume strategy support</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="profile-card">
+        <img src="https://images.unsplash.com/photo-1603415526960-f8f0a1c2c3f0?q=80&w=300&auto=format&fit=crop" alt="Kerny Alvarez" style="width:92px;height:92px;border-radius:24px;object-fit:cover;margin-bottom:18px;" />
+        <h2>Kerny Alvarez</h2>
+        <div class="role">Founder of Kerny Career Solutions</div>
+        <p>
+          I help students and early professionals turn basic experience into clear, strong, ATS-friendly resumes that
+          feel modern and persuasive.
+        </p>
+        <div class="chip-list">
+          <div class="chip">ATS Optimization</div>
+          <div class="chip">LinkedIn Branding</div>
+          <div class="chip">Career Positioning</div>
+          <div class="chip">Portfolio Strategy</div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">Why Kerny feels like a real top candidate</h2>
+      <p class="section-subtitle">
+        This fictional profile is intentionally built like a premium modern consultant: clear headline, measurable
+        results, niche expertise, and a clean online presence. It is the exact type of career website that helps sell a
+        resume service.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Professional Summary</h3>
+          <p>
+            Results-driven Resume Strategist with a proven ability to transform student and entry-level experiences into
+            compelling, interview-winning resumes. Skilled in ATS optimization, personal branding, and storytelling that
+            positions clients competitively in today's job market.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Core Strengths</h3>
+          <ul class="clean">
+            <li>Resume writing with strong achievement-based wording</li>
+            <li>Clean formatting for modern recruiters and ATS systems</li>
+            <li>LinkedIn and portfolio positioning for students</li>
+            <li>Personal branding for internships and entry-level jobs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume">
+    <div class="container">
+      <h2 class="section-title">Kerny's Resume</h2>
+      <p class="section-subtitle">
+        This is the polished resume presentation section. It makes Kerny look credible enough to be hired while also
+        serving as proof of the quality of work he sells.
+      </p>
+
+      <div class="resume-panel">
+        <div class="resume-left">
+          <h3 class="resume-name">Kerny Alvarez</h3>
+          <div class="resume-role">Resume Strategist | Career Branding Specialist</div>
+
+          <div class="small-heading">Contact</div>
+          <p>Los Angeles, CA<br />kerny.alvarez@email.com<br />(213) 555-8890<br />linkedin.com/in/kerny-alvarez</p>
+
+          <div class="small-heading">Skills</div>
+          <p>ATS Resume Writing<br />Personal Branding<br />LinkedIn Optimization<br />Microsoft Word<br />Canva Design<br />Client Consulting<br />Copywriting</p>
+
+          <div class="small-heading">Education</div>
+          <p><strong>Bachelor of Business Administration</strong><br />California State University<br />Relevant focus: Business Communication, Marketing, Career Development</p>
+        </div>
+
+        <div class="resume-right">
+          <div class="timeline-item">
+            <h4>Founder & Resume Consultant</h4>
+            <div class="timeline-meta">Kerny Career Solutions • 2023 – Present</div>
+            <ul class="clean">
+              <li>Designed and delivered 150+ custom resumes for students and entry-level professionals</li>
+              <li>Improved client interview potential through ATS-friendly formatting and keyword alignment</li>
+              <li>Created a repeatable resume package system for faster delivery and consistent quality</li>
+              <li>Provided 1-on-1 career strategy calls focused on strengths, positioning, and confidence</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <h4>Student Career Advisor (Freelance)</h4>
+            <div class="timeline-meta">Remote • 2022 – 2023</div>
+            <ul class="clean">
+              <li>Helped college students transform classroom projects into job-relevant experience</li>
+              <li>Wrote tailored resumes for business, technology, customer service, and finance roles</li>
+              <li>Guided clients on internship applications and personal branding basics</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <h4>Key Achievements</h4>
+            <ul class="clean">
+              <li>Helped 100+ students land stronger internship interviews</li>
+              <li>Built a brand concept that can scale into digital templates and premium resume packages</li>
+              <li>Positioned resume writing as both a service and a personal brand asset</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Service Packages</h2>
+      <p class="section-subtitle">
+        This section helps convert the fictional character into a believable business offer. It makes the site feel like
+        a premium student-focused resume brand.
+      </p>
+
+      <div class="pricing">
+        <div class="price-card">
+          <h3>Basic Resume</h3>
+          <div class="price">$45</div>
+          <ul class="clean">
+            <li>One-page resume</li>
+            <li>Clean modern design</li>
+            <li>Entry-level friendly wording</li>
+            <li>PDF delivery</li>
+          </ul>
+        </div>
+
+        <div class="price-card featured">
+          <div class="badge">Most Popular</div>
+          <h3>Professional Resume</h3>
+          <div class="price">$95</div>
+          <ul class="clean">
+            <li>ATS optimization</li>
+            <li>Targeted job wording</li>
+            <li>Achievement-focused bullets</li>
+            <li>One revision included</li>
+          </ul>
+        </div>
+
+        <div class="price-card">
+          <h3>Premium Package</h3>
+          <div class="price">$165</div>
+          <ul class="clean">
+            <li>Resume + LinkedIn profile support</li>
+            <li>Mini portfolio guidance</li>
+            <li>Brand positioning strategy</li>
+            <li>Priority turnaround</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="results">
+    <div class="container">
+      <h2 class="section-title">Proof of Value</h2>
+      <p class="section-subtitle">
+        Even though Kerny is fictional, this section shows the type of results-oriented language that makes the brand
+        feel trustworthy and marketable.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Sample Client Feedback</h3>
+          <p class="testimonial">“Kerny helped me turn a basic student resume into something that actually looked professional. I felt more confident applying right away.”</p>
+          <p class="testimonial">“The resume looked modern, clean, and way better than anything I had before. It finally felt like I had a real professional identity.”</p>
+        </div>
+        <div class="card">
+          <h3>Why This Converts</h3>
+          <ul class="clean">
+            <li>Strong visual branding</li>
+            <li>Immediate credibility through numbers and niche focus</li>
+            <li>Professional language that sounds premium but still approachable</li>
+            <li>Perfect for GitHub Pages, portfolios, and student-facing services</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container contact-box">
+      <div class="card">
+        <h2 class="section-title" style="margin-top:0;">Let's Build Your Next Opportunity</h2>
+        <p class="section-subtitle" style="margin-bottom: 14px;">
+          Need a resume that feels confident, modern, and actually marketable? Kerny helps students and early
+          professionals present themselves like serious candidates.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="mailto:kerny.alvarez@email.com">Email Kerny</a>
+          <a class="btn btn-secondary" href="#top">Back to Top</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Contact Info</h3>
+        <div class="contact-list">
+          <div><strong>Email:</strong> kerny.alvarez@email.com</div>
+          <div><strong>Phone:</strong> (213) 555-8890</div>
+          <div><strong>Location:</strong> Los Angeles, California</div>
+          <div><strong>LinkedIn:</strong> linkedin.com/in/kerny-alvarez</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      Built as a fictional premium resume brand for portfolio and marketing use • Kerny Alvarez
+    </div>
+  </footer>
+
+  <script>
+    const links = document.querySelectorAll('.nav-links a');
+    const sections = [...links].map(link => document.querySelector(link.getAttribute('href')));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          links.forEach(link => link.classList.remove('active'));
+          const activeLink = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    }, { threshold: 0.35 });
+
+    sections.forEach(section => {
+      if (section) observer.observe(section);
+    });
+  </script>
+</body>
+</html>
