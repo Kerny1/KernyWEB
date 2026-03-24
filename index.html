@@ -16,11 +16,12 @@
       background: #f4f6f8;
       color: #1f2937;
       line-height: 1.6;
+      padding: 20px;
     }
 
     .page {
       max-width: 1100px;
-      margin: 40px auto;
+      margin: 20px auto;
       background: white;
       border-radius: 18px;
       overflow: hidden;
@@ -33,6 +34,19 @@
       padding: 50px 60px;
     }
 
+    .hero-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+    }
+
     .hero h1 {
       font-size: 42px;
       margin-bottom: 10px;
@@ -42,6 +56,20 @@
       font-size: 18px;
       color: #dbe4ee;
       max-width: 750px;
+    }
+
+    .hero-photo {
+      flex-shrink: 0;
+    }
+
+    .hero-photo img {
+      width: 190px;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 3px solid rgba(255,255,255,0.20);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      display: block;
     }
 
     .top-info {
@@ -58,13 +86,18 @@
       text-decoration: none;
     }
 
+    .top-info a:hover {
+      text-decoration: underline;
+    }
+
     .main {
       display: grid;
       grid-template-columns: 2fr 1fr;
       gap: 0;
     }
 
-    .left, .right {
+    .left,
+    .right {
       padding: 40px 35px;
     }
 
@@ -149,22 +182,22 @@
     }
 
     .btn-primary {
-      background: #1e3a5f;
-      color: white;
+      background: white;
+      color: #1e3a5f;
     }
 
     .btn-primary:hover {
-      background: #152b45;
+      background: #e8eef5;
     }
 
     .btn-secondary {
-      border: 1px solid #1e3a5f;
-      color: #1e3a5f;
-      background: white;
+      border: 1px solid rgba(255,255,255,0.5);
+      color: white;
+      background: transparent;
     }
 
     .btn-secondary:hover {
-      background: #f2f6fa;
+      background: rgba(255,255,255,0.08);
     }
 
     .footer {
@@ -189,12 +222,23 @@
         padding: 35px 25px;
       }
 
-      .left, .right {
+      .left,
+      .right {
         padding: 28px 22px;
       }
 
       .hero h1 {
         font-size: 34px;
+      }
+
+      .hero-content {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+      }
+
+      .hero-photo img {
+        width: 160px;
+        height: 160px;
       }
     }
   </style>
@@ -202,24 +246,32 @@
 <body>
   <div class="page">
     <section class="hero">
-      <h1>Kerny Professional</h1>
-      <p>
-        Hospitality Management student with a 4.0 GPA and strong experience in executive programming,
-        administrative support, team coordination, and customer-focused operations.
-      </p>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Kerny Professional</h1>
+          <p>
+            Hospitality Management student with a 4.0 GPA and strong experience in executive programming,
+            administrative support, team coordination, and customer-focused operations.
+          </p>
 
-      <div class="top-info">
-        <span>Chico, CA</span>
-        <span>(555) 123-4567</span>
-        <a href="mailto:kprofessional@email.com">kprofessional@email.com</a>
-        <a href="https://linkedin.com/in/kernyprofessional" target="_blank">
-          linkedin.com/in/kernyprofessional
-        </a>
-      </div>
+          <div class="top-info">
+            <span>Chico, CA</span>
+            <span>555.555.5555</span>
+            <a href="mailto:kprofessional@email.com">kprofessional@email.com</a>
+            <a href="https://www.linkedin.com/in/professional-kerny1/" target="_blank">
+              linkedin.com/in/professional-kerny1
+            </a>
+          </div>
 
-      <div class="buttons">
-        <a class="btn btn-primary" href="mailto:kprofessional@email.com">Contact</a>
-        <a class="btn btn-secondary" href="https://linkedin.com/in/kernyprofessional" target="_blank">LinkedIn</a>
+          <div class="buttons">
+            <a class="btn btn-primary" href="mailto:kprofessional@email.com">Contact</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/professional-kerny1/" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="hero-photo">
+          <img src="pic1.png" alt="Kerny Professional Photo" />
+        </div>
       </div>
     </section>
 
