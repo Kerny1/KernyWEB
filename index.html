@@ -3,175 +3,244 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kerny Professional | Premium Resume</title>
+<title>Kernel Solutions | Resume Services</title>
 
 <style>
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+  font-family: Arial, Helvetica, sans-serif;
   background: #0b0f19;
   color: #e5e7eb;
 }
 
 /* HERO */
 .hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 80px 10%;
-  min-height: 100vh;
+  text-align: center;
+  padding: 80px 20px;
 }
 
-.left {
-  max-width: 520px;
-}
-
-h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
+.hero h1 {
+  font-size: 42px;
   color: white;
 }
 
-.subtitle {
-  font-size: 20px;
+.hero p {
+  max-width: 700px;
+  margin: 20px auto;
   color: #9ca3af;
-  margin-bottom: 30px;
-}
-
-.intro {
-  font-size: 16px;
-  margin-bottom: 30px;
   line-height: 1.6;
 }
 
-.price {
-  font-size: 18px;
+.highlight {
   color: #facc15;
-  margin-bottom: 25px;
+  font-weight: bold;
 }
 
-.buttons {
-  display: flex;
-  gap: 15px;
+.price {
+  font-size: 20px;
+  margin: 20px 0;
 }
 
 .btn {
+  display: inline-block;
   padding: 14px 22px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.primary {
   background: white;
   color: black;
-}
-
-.secondary {
-  border: 1px solid #555;
-  color: white;
-}
-
-/* IMAGE */
-.photo img {
-  width: 240px;
-  height: 240px;
-  object-fit: contain;
-  border-radius: 20px;
-  background: white;
-  padding: 6px;
-}
-
-/* INFO */
-.info {
-  margin-top: 40px;
-  font-size: 14px;
-  color: #9ca3af;
-}
-
-.info a {
-  color: #9ca3af;
+  border-radius: 8px;
   text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
-.info a:hover {
-  color: white;
+/* RESUME */
+.resume {
+  background: white;
+  color: #111;
+  max-width: 1000px;
+  margin: 60px auto;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-/* SECTION */
+.resume-header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
+  background: #f4f6f8;
+}
+
+.resume-header img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  background: white;
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.resume-name {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.resume-contact {
+  font-size: 14px;
+  color: #555;
+}
+
+.resume-body {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
 .section {
-  padding: 60px 10%;
-  background: #111827;
+  padding: 25px;
 }
 
 .section h2 {
-  margin-bottom: 20px;
-  font-size: 26px;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 10px;
 }
 
-.section p {
-  max-width: 700px;
-  color: #9ca3af;
+.item {
+  margin-bottom: 15px;
+}
+
+.sidebar {
+  background: #f8fafc;
 }
 
 /* FOOTER */
 .footer {
   text-align: center;
-  padding: 25px;
+  padding: 30px;
   font-size: 13px;
   color: #6b7280;
 }
 </style>
+
 </head>
 
 <body>
 
+<!-- HERO / SALES -->
 <section class="hero">
 
-  <div class="left">
-    <h1>Kerny Professional</h1>
+<h1>Kernel Solutions</h1>
 
-    <div class="subtitle">
-      Premium Resume Experience
-    </div>
+<p>
+Welcome to <span class="highlight">Kernel Solutions Resume Services</span>.  
+A professionally designed resume can significantly increase your chances of getting hired.  
+Studies show that candidates with optimized resumes are up to <span class="highlight">2x more likely</span> to get interview callbacks.
+</p>
 
-    <div class="intro">
-      This is a premium example of how your professional resume can be presented online.
-      Designed for students and professionals who want to stand out and be taken seriously.
-    </div>
+<p>
+Invest in your future today with a premium online resume designed to help you stand out in a competitive job market.
+</p>
 
-    <div class="price">
-      Starting at $49.99
-    </div>
+<div class="price">
+$99.99 — <span class="highlight">50% Student Discount Available</span>
+</div>
 
-    <div class="buttons">
-      <a class="btn primary" href="mailto:resumechico@outlook.com">Get Your Resume</a>
-      <a class="btn secondary" href="https://www.linkedin.com/in/professional-kerny1/" target="_blank">View LinkedIn</a>
-    </div>
-
-    <div class="info">
-      Chico, CA · 530.341.5204 · 
-      <a href="mailto:resumechico@outlook.com">resumechico@outlook.com</a>
-    </div>
-  </div>
-
-  <div class="photo">
-    <img src="pic1.png" alt="Kerny Photo">
-  </div>
+<a class="btn" href="mailto:resumechico@outlook.com">Explore Our Services</a>
 
 </section>
 
-<section class="section">
-  <h2>Professional Summary</h2>
-  <p>
-    Motivated Hospitality Management student with a 4.0 GPA and strong experience in leadership,
-    administration, and customer-focused operations. This premium layout demonstrates how a
-    modern resume can elevate a candidate’s professional presence.
-  </p>
-</section>
+<!-- RESUME SAMPLE -->
+<div class="resume">
+
+<div class="resume-header">
+<img src="pic1.png" alt="Kerny Photo">
+
+<div>
+<div class="resume-name">Kerny Gutierrez</div>
+<div class="resume-contact">
+Chico, CA · 530.341.5204 · resumechico@outlook.com  
+<br>
+linkedin.com/in/professional-kerny1
+</div>
+</div>
+</div>
+
+<div class="resume-body">
+
+<div class="section">
+
+<h2>Professional Summary</h2>
+<p>
+Highly motivated Hospitality Management student with a 4.0 GPA and strong background in leadership, operations, and customer service. Recognized for academic excellence and ability to deliver high-quality service experiences. Seeking to contribute to a dynamic organization in the hospitality industry.
+</p>
+
+<h2>Education</h2>
+<div class="item">
+<strong>California State University, Chico</strong><br>
+Bachelor of Science in Hospitality Management  
+<br>GPA: 4.0 — Expected Graduation: May 2026
+</div>
+
+<h2>Experience</h2>
+
+<div class="item">
+<strong>BestUniverty Inc — Executive Program Assistant</strong><br>
+2020 – Present<br>
+<ul>
+<li>Supported executive operations and coordinated internal workflows</li>
+<li>Improved administrative efficiency through digital tools</li>
+<li>Assisted leadership in strategic planning and reporting</li>
+</ul>
+</div>
+
+<div class="item">
+<strong>Campus Dining Services — Team Lead</strong><br>
+2022 – 2024<br>
+<ul>
+<li>Led a team of 10+ staff members in high-volume service environment</li>
+<li>Maintained high customer satisfaction standards</li>
+<li>Trained new employees and improved onboarding efficiency</li>
+</ul>
+</div>
+
+<h2>Leadership & Activities</h2>
+<ul>
+<li>Hospitality Club — Active Member</li>
+<li>Volunteer — Community Housing Projects</li>
+<li>Organized student networking events</li>
+</ul>
+
+</div>
+
+<div class="section sidebar">
+
+<h2>Skills</h2>
+<ul>
+<li>Customer Service Excellence</li>
+<li>Team Leadership</li>
+<li>Operations Management</li>
+<li>Communication</li>
+<li>Problem Solving</li>
+</ul>
+
+<h2>Awards</h2>
+<ul>
+<li>Best Student Award — 2025</li>
+<li>Dean’s List — Multiple Semesters</li>
+</ul>
+
+<h2>Languages</h2>
+<ul>
+<li>English — Fluent</li>
+<li>Spanish — Fluent</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
 
 <div class="footer">
-  © 2026 Resume Chico — Premium Resume Sample
+© 2026 Kernel Solutions — Premium Resume Services
 </div>
 
 </body>
