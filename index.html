@@ -1,238 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kerny Professional | Resume</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kerny Professional | Premium Resume</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+  background: #0b0f19;
+  color: #e5e7eb;
+}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f4f6f8;
-      color: #1f2937;
-      line-height: 1.6;
-      padding: 20px;
-    }
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 10%;
+  min-height: 100vh;
+}
 
-    .page {
-      max-width: 1100px;
-      margin: 20px auto;
-      background: white;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
+.left {
+  max-width: 520px;
+}
 
-    .hero {
-      background: linear-gradient(135deg, #0f172a, #1e3a5f);
-      color: white;
-      padding: 50px 60px;
-    }
+h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: white;
+}
 
-    .hero-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
+.subtitle {
+  font-size: 20px;
+  color: #9ca3af;
+  margin-bottom: 30px;
+}
 
-    .hero-text {
-      flex: 1;
-      min-width: 280px;
-    }
+.intro {
+  font-size: 16px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
 
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
+.price {
+  font-size: 18px;
+  color: #facc15;
+  margin-bottom: 25px;
+}
 
-    .intro-message {
-      margin-bottom: 14px;
-      font-size: 17px;
-      color: #f8fafc;
-      max-width: 760px;
-    }
+.buttons {
+  display: flex;
+  gap: 15px;
+}
 
-    .hero p {
-      font-size: 18px;
-      color: #dbe4ee;
-      max-width: 750px;
-    }
+.btn {
+  padding: 14px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
 
-    .price-tag {
-      display: inline-block;
-      margin-top: 14px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.22);
-      color: #ffffff;
-      font-weight: bold;
-      font-size: 15px;
-    }
+.primary {
+  background: white;
+  color: black;
+}
 
-    .hero-photo img {
-      width: 190px;
-      height: 190px;
-      object-fit: contain; /* 👈 muestra la foto completa */
-      object-position: center;
-      background: #ffffff;
-      border-radius: 18px;
-      border: 3px solid rgba(255,255,255,0.20);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-      padding: 4px;
-    }
+.secondary {
+  border: 1px solid #555;
+  color: white;
+}
 
-    .top-info {
-      margin-top: 22px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px 24px;
-      font-size: 15px;
-      color: #e5edf5;
-    }
+/* IMAGE */
+.photo img {
+  width: 240px;
+  height: 240px;
+  object-fit: contain;
+  border-radius: 20px;
+  background: white;
+  padding: 6px;
+}
 
-    .top-info a {
-      color: #e5edf5;
-      text-decoration: none;
-    }
+/* INFO */
+.info {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #9ca3af;
+}
 
-    .buttons {
-      margin-top: 25px;
-      display: flex;
-      gap: 12px;
-    }
+.info a {
+  color: #9ca3af;
+  text-decoration: none;
+}
 
-    .btn {
-      padding: 12px 18px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+.info a:hover {
+  color: white;
+}
 
-    .btn-primary {
-      background: white;
-      color: #1e3a5f;
-    }
+/* SECTION */
+.section {
+  padding: 60px 10%;
+  background: #111827;
+}
 
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.5);
-      color: white;
-    }
+.section h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+}
 
-    .main {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-    }
+.section p {
+  max-width: 700px;
+  color: #9ca3af;
+}
 
-    .left, .right {
-      padding: 40px 35px;
-    }
-
-    .left {
-      border-right: 1px solid #e5e7eb;
-    }
-
-    .section {
-      margin-bottom: 30px;
-    }
-
-    .section h2 {
-      margin-bottom: 10px;
-      border-bottom: 2px solid #ddd;
-    }
-
-    .sidebar-box {
-      background: #f8fafc;
-      padding: 15px;
-      margin-bottom: 15px;
-      border-radius: 10px;
-    }
-
-    .footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: #777;
-    }
-  </style>
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 25px;
+  font-size: 13px;
+  color: #6b7280;
+}
+</style>
 </head>
 
 <body>
 
-<div class="page">
+<section class="hero">
 
-  <section class="hero">
-    <div class="hero-content">
+  <div class="left">
+    <h1>Kerny Professional</h1>
 
-      <div class="hero-text">
-        <h1>Kerny Professional</h1>
-
-        <p class="intro-message">
-          Welcome to this sample website. Kerny is an example of how your resume can look online.
-          Click on Kerny’s LinkedIn or contact our team to create your own professional web resume.
-        </p>
-
-        <p>
-          Hospitality Management student with a 4.0 GPA and strong experience in executive programming,
-          administrative support, and team coordination.
-        </p>
-
-        <div class="price-tag">$49.99 Web Resume</div>
-
-        <div class="top-info">
-          <span>Chico, CA</span>
-          <span>530.341.5204</span>
-          <a href="mailto:resumechico@outlook.com">resumechico@outlook.com</a>
-          <a href="https://www.linkedin.com/in/professional-kerny1/" target="_blank">LinkedIn</a>
-        </div>
-
-        <div class="buttons">
-          <a class="btn btn-primary" href="mailto:resumechico@outlook.com">Contact</a>
-          <a class="btn btn-secondary" href="https://www.linkedin.com/in/professional-kerny1/" target="_blank">LinkedIn</a>
-        </div>
-      </div>
-
-      <div class="hero-photo">
-        <img src="pic1.png" alt="Kerny Photo">
-      </div>
-
-    </div>
-  </section>
-
-  <section class="main">
-
-    <div class="left">
-      <div class="section">
-        <h2>Professional Summary</h2>
-        <p>
-          Motivated Hospitality Management student with strong leadership, administrative,
-          and customer service skills. Highly adaptable and team-oriented.
-        </p>
-      </div>
+    <div class="subtitle">
+      Premium Resume Experience
     </div>
 
-    <div class="right">
-      <div class="sidebar-box">
-        <h3>Education</h3>
-        <p>California State University, Chico</p>
-        <p>GPA: 4.0</p>
-      </div>
+    <div class="intro">
+      This is a premium example of how your professional resume can be presented online.
+      Designed for students and professionals who want to stand out and be taken seriously.
     </div>
 
-  </section>
+    <div class="price">
+      Starting at $49.99
+    </div>
 
-  <div class="footer">
-    © 2026 Kerny Professional
+    <div class="buttons">
+      <a class="btn primary" href="mailto:resumechico@outlook.com">Get Your Resume</a>
+      <a class="btn secondary" href="https://www.linkedin.com/in/professional-kerny1/" target="_blank">View LinkedIn</a>
+    </div>
+
+    <div class="info">
+      Chico, CA · 530.341.5204 · 
+      <a href="mailto:resumechico@outlook.com">resumechico@outlook.com</a>
+    </div>
   </div>
 
+  <div class="photo">
+    <img src="pic1.png" alt="Kerny Photo">
+  </div>
+
+</section>
+
+<section class="section">
+  <h2>Professional Summary</h2>
+  <p>
+    Motivated Hospitality Management student with a 4.0 GPA and strong experience in leadership,
+    administration, and customer-focused operations. This premium layout demonstrates how a
+    modern resume can elevate a candidate’s professional presence.
+  </p>
+</section>
+
+<div class="footer">
+  © 2026 Resume Chico — Premium Resume Sample
 </div>
 
 </body>
