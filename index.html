@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KernyWEB | Digital Resume Landing Pages</title>
+  <meta
+    name="description"
+    content="KernyWEB creates clean and professional digital resume landing pages for students, professionals, and clients."
+  />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0a0a0a;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.94);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: #d4af37;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #dddddd;
+      transition: 0.2s ease;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: #d4af37;
+    }
+
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.8)),
+        url("pic1.png") center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 760px;
+      padding: 90px 0;
+    }
+
+    .eyebrow {
+      color: #d4af37;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      line-height: 1.12;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      color: #d6d6d6;
+      font-size: 1.08rem;
+      max-width: 650px;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: #d4af37;
+      color: #0a0a0a;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #e3c154;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      color: #d4af37;
+      border-color: #d4af37;
+    }
+
+    section {
+      padding: 88px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      color: #cccccc;
+      max-width: 720px;
+      margin-bottom: 38px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: #141414;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 28px;
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212,175,55,0.42);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      color: #cfcfcf;
+      font-size: 0.97rem;
+    }
+
+    .sample-section {
+      background: #101010;
+    }
+
+    .sample-box {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 26px;
+      align-items: center;
+      background: #151515;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      padding: 34px;
+    }
+
+    .sample-box h3 {
+      font-size: 1.55rem;
+      margin-bottom: 12px;
+    }
+
+    .sample-box p {
+      color: #d1d1d1;
+      margin-bottom: 22px;
+    }
+
+    .preview {
+      background: linear-gradient(135deg, #181818, #0f0f0f);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 28px;
+      text-align: center;
+    }
+
+    .preview .preview-title {
+      color: #d4af37;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .contact-info,
+    form {
+      background: #151515;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 30px;
+    }
+
+    .contact-info h3 {
+      font-size: 1.45rem;
+      margin-bottom: 14px;
+    }
+
+    .contact-info p,
+    .contact-info li {
+      color: #d0d0d0;
+    }
+
+    .contact-info ul {
+      padding-left: 18px;
+      margin-top: 10px;
+    }
+
+    .contact-info li {
+      margin-bottom: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: #0f0f0f;
+      color: #ffffff;
+      font-size: 1rem;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #d4af37;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 26px 0;
+      text-align: center;
+      color: #bdbdbd;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      h1 {
+        font-size: 2.45rem;
+      }
+
+      .sample-box,
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="logo">Kerny<span>WEB</span></div>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#sample">Sample</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="eyebrow">Professional Digital Resume Presence</div>
+      <h1>Clean, modern landing pages for resumes, portfolios, and personal presentation.</h1>
+      <p>
+        KernyWEB helps students, professionals, and clients present themselves online
+        through simple, elegant, and easy-to-share digital resume experiences.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Submit a Request</a>
+        <a href="sample.html" class="btn btn-secondary">View Sample</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">What We Offer</h2>
+      <p class="section-subtitle">
+        A practical digital solution for clients who want something more modern and more memorable than a traditional resume alone.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Resume Landing Pages</h3>
+          <p>Single-page professional websites designed to present experience, education, skills, and contact details clearly.</p>
+        </div>
+        <div class="card">
+          <h3>Digital Resume Presentation</h3>
+          <p>A cleaner online format that feels more polished, modern, and easy to share with employers or clients.</p>
+        </div>
+        <div class="card">
+          <h3>Portfolio-Ready Layouts</h3>
+          <p>Perfect for adding projects, social profiles, links, and future QR-based sharing options.</p>
+        </div>
+        <div class="card">
+          <h3>Client-Friendly Setup</h3>
+          <p>Simple onboarding, clear presentation, and a service flow built to make requesting easy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sample" class="sample-section">
+    <div class="container">
+      <h2 class="section-title">See the Sample</h2>
+      <p class="section-subtitle">
+        Your current sample page is already connected below, so visitors can preview the type of experience KernyWEB can deliver.
+      </p>
+
+      <div class="sample-box">
+        <div>
+          <h3>View the live sample page</h3>
+          <p>
+            This sample demonstrates the structure and direction of a clean client-facing digital resume experience.
+          </p>
+          <a href="sample.html" class="btn btn-primary">Open Sample Page</a>
+        </div>
+
+        <div class="preview">
+          <div class="preview-title">KernyWEB Sample</div>
+          <p>
+            Clean layout<br>
+            Clear information<br>
+            Professional presentation
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="container">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-subtitle">
+        A simple process designed to move from idea to finished page quickly and clearly.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>1. Submit a Request</h3>
+          <p>Tell us what you need and what type of page or presentation you want to build.</p>
+        </div>
+        <div class="card">
+          <h3>2. Share Your Details</h3>
+          <p>Provide resume information, goals, links, and any professional details that should be included.</p>
+        </div>
+        <div class="card">
+          <h3>3. Build the Page</h3>
+          <p>Your content is organized into a polished structure designed for modern online presentation.</p>
+        </div>
+        <div class="card">
+          <h3>4. Review and Share</h3>
+          <p>Once completed, the page is ready to be shared with employers, recruiters, or clients.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Submit a Request</h2>
+      <p class="section-subtitle">
+        Ready to get started? Send your request below and we will review your information.
+      </p>
+
+      <div class="contact-wrap">
+        <div class="contact-info">
+          <h3>Why choose a digital resume page?</h3>
+          <p>
+            A digital landing page can help make your profile easier to view, easier to share, and more memorable than a PDF alone.
+          </p>
+          <ul>
+            <li>Professional first impression</li>
+            <li>Easy link sharing</li>
+            <li>Clean online presentation</li>
+            <li>Useful for students, professionals, and client-facing profiles</li>
+          </ul>
+        </div>
+
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="PUT_YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+          <input type="hidden" name="subject" value="New KernyWEB Request">
+          <input type="hidden" name="redirect" value="https://kerny1.github.io/KernyWEB/thank-you.html">
+
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="service">Service Needed</label>
+            <input type="text" id="service" name="service" placeholder="Resume page, portfolio page, landing page..." required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Project Details</label>
+            <textarea id="message" name="message" placeholder="Tell us what you need..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%; cursor:pointer;">Submit Request</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      KernyWEB © 2026 | Digital resume landing page solutions
+    </div>
+  </footer>
+
+</body>
+</html>
